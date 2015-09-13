@@ -26,9 +26,11 @@ The doctests are copied from IAURLCanonicalizerTest.java:
 http://archive-access.svn.sourceforge.net/viewvc/archive-access/trunk/archive-access/projects/archive-commons/src/test/java/org/archive/url/IAURLCanonicalizerTest.java?view=markup
 """
 
+from __future__ import absolute_import
+
 import re
-from handyurl import handyurl
-from URLRegexTransformer import stripPathSessionID, stripQuerySessionID
+from surt.handyurl import handyurl
+from surt.URLRegexTransformer import stripPathSessionID, stripQuerySessionID
 
 # canonicalize()
 #_______________________________________________________________________________
@@ -39,7 +41,7 @@ def canonicalize(url, host_lowercase=True, host_massage=True,
                  path_strip_trailing_slash_unless_empty=True,
                  query_lowercase=True, query_strip_session_id=True,
                  query_strip_empty=True, query_alpha_reorder=True,
-                 hash_strip=True):
+                 hash_strip=True, **_ignored):
     """The input url is a handyurl instance
 
     These doctests are from IAURLCanonicalizerTest.java:
